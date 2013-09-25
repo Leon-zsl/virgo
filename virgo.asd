@@ -8,13 +8,22 @@
 (in-package :virgo-asd)
 
 (defsystem virgo
-  :version "0.1"
-  :author ""
-  :license ""
-  :depends-on ()
+  :description "this is a renderer based on opengl"
+  :version "0.0.1"
+  :author "Leon Zhang"
+  :license "BSD"
+  :depends-on (:cffi
+			   :cl-opengl)
   :components ((:module "src"
                 :components
-                ((:file "virgo"))))
+                ((:file "package")
+				 (:file "virgo" depends-on ("package"))
+				 (:file "scene" depends-on ("package"))
+				 (:file "camera" depends-on ("package"))
+				 (:file "entity" depends-on ("package"))
+				 (:file "light" depends-on ("package"))
+				 (:file "matrix44" depends-on ("package"))
+				 (:file "vector4" depends-on ("package")))))
   :description ""
   :long-description
   #.(with-open-file (stream (merge-pathnames

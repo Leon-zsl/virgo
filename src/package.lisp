@@ -5,8 +5,11 @@ the package define
 (defpackage #:virgo
   (:use #:cl
 		#:cffi
-		#:cl-opengl)
-  (:export #:virgo
+;		#:cl-opengl
+;		#:lispbuilder-sdl
+		#:usocket
+		#:userial)
+  (:export #:main
 		   #:scene
 		   #:camera
 		   #:entity

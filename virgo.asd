@@ -13,17 +13,25 @@
   :author "Leon Zhang"
   :license "BSD"
   :depends-on (:cffi
-			   :cl-opengl)
+			   :cl-opengl
+			   :lispbuilder-sdl
+			   :lispbuilder-sdl-image
+			   :lispbuilder-sdl-mixer
+			   :usocket
+			   :userial)
   :components ((:module "src"
                 :components
                 ((:file "package")
-				 (:file "virgo" depends-on ("package"))
+				 (:file "main" depends-on ("package"))
 				 (:file "scene" depends-on ("package"))
 				 (:file "camera" depends-on ("package"))
 				 (:file "entity" depends-on ("package"))
 				 (:file "light" depends-on ("package"))
+				 (:file "material" depends-on ("package"))
 				 (:file "matrix44" depends-on ("package"))
-				 (:file "vector4" depends-on ("package")))))
+				 (:file "vector4" depends-on ("package"))
+				 (:file "packet" depends-on ("package"))
+				 (:file "socket" depends-on ("package")))))
   :description ""
   :long-description
   #.(with-open-file (stream (merge-pathnames

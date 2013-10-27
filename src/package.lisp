@@ -1,18 +1,11 @@
-#|
-the package define
-|#
-
 (defpackage #:virgo
-  (:use #:cl
-		#:cffi
-;		#:cl-opengl
-;		#:lispbuilder-sdl
-		#:usocket
-		#:userial)
-  (:export #:main
-		   #:scene
-		   #:camera
-		   #:entity
-		   #:light
-		   #:matrix44
-		   #:vector4))
+  (:use :cl
+		:cffi
+
+		:virgo-math
+		:virgo-render
+		:virgo-scene
+		:virgo-res
+		:virgo-net
+		:virgo-game)
+  (:export :main))

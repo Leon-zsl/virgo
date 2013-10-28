@@ -7,3 +7,12 @@
 
 (defun copy-matrix44 (m)
   (copy-array m))
+
+(defun matrix44-multiply (m0 m1)
+  ())
+
+(defun matrix44-multiply-quaternion (m q)
+  ())
+
+(defun matrix44-multiply-vector4 (m v)
+  ())

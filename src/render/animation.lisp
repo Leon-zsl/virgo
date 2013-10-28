@@ -5,3 +5,6 @@
 
 (defun make-animation ()
   (make-instance 'animation))
+
+(defmethod animate ((animation animation))
+  ())

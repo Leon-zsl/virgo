@@ -3,13 +3,7 @@
 (defclass game ()
   ((scene :reader game-scene
 		  :initarg :scene
-		  :initform nil)
-   (camera :reader game-camera
-		   :initarg :camera
-		   :initform nil)
-   (entities :reader entities
-			 :initarg :entities
-			 :initform (make-hash-table))))
+		  :initform nil)))
 
 (defun make-game ()
   (make-instance 'game))

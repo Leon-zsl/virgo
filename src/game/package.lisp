@@ -1,6 +1,5 @@
 (defpackage #:virgo-game
   (:use :cl
-		:cffi
 		:virgo-math
 		:virgo-render
 		:virgo-scene

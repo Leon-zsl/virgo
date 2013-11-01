@@ -1,14 +1,14 @@
 (in-package :virgo-math)
 
 (defclass transform ()
-  ((position :accessor position
-			 :initarg :position
+  ((pos :accessor pos
+			 :initarg :pos
 			 :initform (make-vector4))
-   (rotation :accessor rotation
-			 :initarg :rotation
+   (rot :accessor rot
+			 :initarg :rot
 			 :initform (make-quaternion))
    (scale :accessor scale
-		  :initarg (make-vector4)
+		  :initarg :scale
 		  :initform (make-vector4))
    (parent :accessor parent
 		   :initarg :parent
@@ -17,7 +17,7 @@
 			 :initarg :children
 			 :initform (make-array :element-type 'transform
 								   :adjustable t
-								   :fill-pointer 0)))
+								   :fill-pointer 0))))
 
 (defun make-transform ()
   (make-instance 'transform))

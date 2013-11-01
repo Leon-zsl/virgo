@@ -6,16 +6,16 @@
 		  :initform nil)))
 
 (defun make-game ()
-  (make-instance 'game))
+  (make-instance 'game :scene (make-scene)))
 
 (defun game-startup (g)
-  (format t "game module start~%"))
+  (cl:format t "game module start~%"))
 
 (defun game-shutdown (g)
-  (format t "game module shutdown~%"))
+  (cl:format t "game module shutdown~%"))
 
 (defun game-update (g)
-  (format t "game module update~%"))
+  (cl:format t "game module update~%"))
 
 (defmacro with-game-loop (g fps &body body)
   (let ((gg (gensym))

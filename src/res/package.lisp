@@ -1,7 +1,5 @@
 (defpackage #:virgo-res
   (:use :cl
-		:cffi
-
 		:virgo-math
 		:virgo-render
 		:virgo-scene)

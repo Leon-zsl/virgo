@@ -1,6 +1,5 @@
 (defpackage #:virgo-math
-  (:use #:cl
-		#:cffi)
+  (:use #:cl)
   (:export #:make-matrix44
 		   #:copy-matrix44
 		   #:make-vector4

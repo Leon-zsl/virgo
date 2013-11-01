@@ -1,7 +1,3 @@
-#|
-  This file is a part of virgo project.
-|#
-
 (in-package :cl-user)
 (defpackage virgo-asd
   (:use :cl :asdf))
@@ -14,9 +10,6 @@
   :license "BSD"
   :depends-on (:cffi
 			   :cl-opengl
-			   ;; :lispbuilder-sdl
-			   ;; :lispbuilder-sdl-image
-			   ;; :lispbuilder-sdl-mixer
 			   :usocket
 			   :userial)
   :components ((:module "src"
@@ -25,7 +18,9 @@
 						  :components
 						  ((:file "package")
 						   (:file "vector4")
-						   (:file "matrix44"))
+						   (:file "quaternion")
+						   (:file "matrix44")
+						   (:file "transform"))
 						  :serial t)
 				 (:module render
 						  :components
@@ -33,6 +28,8 @@
 						   (:file "material")
 						   (:file "mesh")
 						   (:file "animation")
+						   (:file "texture")
+						   (:file "skinnedmesh")
 						   (:file "renderer"))
 						  :serial t)
 				 (:module scene
@@ -55,12 +52,12 @@
 						   (:file "socket"))
 						  :serial t)
 				 (:module game
-						  :components
-						  ((:file "package")
-						   (:file "game"))
-						  :serial t)
+				 		  :components
+				 		  ((:file "package")
+				 		   (:file "game"))
+				 		  :serial t)
 				 (:file "package")
-				 (:file "main"))
+				  (:file "main"))
 				 :serial t))
   :description ""
   :long-description

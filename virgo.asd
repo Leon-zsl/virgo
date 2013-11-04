@@ -17,6 +17,7 @@
                 ((:module math
 						  :components
 						  ((:file "package")
+						   (:file "color")
 						   (:file "vector4")
 						   (:file "quaternion")
 						   (:file "matrix44")
@@ -57,7 +58,7 @@
 				 		   (:file "game"))
 				 		  :serial t)
 				 (:file "package")
-				  (:file "main"))
+				 (:file "main"))
 				 :serial t))
   :description ""
   :long-description

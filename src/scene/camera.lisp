@@ -1,16 +1,16 @@
 (in-package :virgo-scene)
 
 (defclass camera ()
-  ((transform :accessor transform
+  ((transform :accessor camera-transform
 			  :initarg :transform
 			  :initform (make-transform))
-   (fov :accessor fov
+   (fov :accessor camera-fov
 		:initarg :fov
 		:initform 0)
-   (near :accessor near
+   (near :accessor camera-near
 		 :initarg :near
 		 :initform 0)
-   (far :accessor far
+   (far :accessor camera-far
 		:initarg :far
 		:initform 0)))
 

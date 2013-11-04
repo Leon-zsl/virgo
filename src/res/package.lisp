@@ -1,8 +1,7 @@
-(defpackage #:virgo-res
-  (:use :cl
-		:virgo-math
-		:virgo-render
-		:virgo-scene)
+(in-package :cl-user)
+
+(defpackage :virgo-res
+  (:use :cl)
   (:export :read-mesh
 		   :read-animation
 		   :read-texture

@@ -1,5 +1,8 @@
 (in-package :virgo-math)
 
+(defvar +quaternion-zero+ #(0 0 0 0))
+(defvar +quaternion-identity+ #(0 0 0 1))
+
 (defun make-quaternion(&optional init-data)
   (if init-data
 	  (make-array 4 :element-type 'float :initial-contents init-data)

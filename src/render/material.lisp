@@ -3,7 +3,7 @@
 (defclass material ()
   ((textures :accessor textures
 			:initarg :textures
-			:initform (make-array :element-type 'texture :adjustable t :fill-pointer 0))
+			:initform ())
    (vertex-shader :accessor vertex-shader
 				  :initarg :vertex-shader
 				  :initform nil)

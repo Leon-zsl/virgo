@@ -1,7 +1,7 @@
 (in-package :virgo-game)
 
 (defclass game ()
-  ((scene :reader game-scene
+  ((scene :accessor game-scene
 		  :initarg :scene
 		  :initform nil)))
 
@@ -16,6 +16,10 @@
 
 (defun game-update (g)
   (cl:format t "game module update~%"))
+
+(defun game-render (g)
+  (cl:format t "game module render~%")
+  (render-scene (game-scene g)))
 
 (defmacro with-game-loop (g fps &body body)
   (let ((gg (gensym))
@@ -40,6 +44,7 @@
 						   ;(format t "run time: ~a, ~a, ~a~%" ,time ,tick ,delta)
 						   (setf ,tick (get-internal-real-time))
 						   (game-update ,gg)
+						   (game-render ,gg)
 						   ,@body)
 						 (progn
 						   ;(format t "sleep time: ~a,~a,~a~%" ,time ,tick ,delta)

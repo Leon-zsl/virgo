@@ -15,12 +15,31 @@
 		   :initform nil)
    (children :accessor children
 			 :initarg :children
-			 :initform (make-array :element-type 'transform
-								   :adjustable t
-								   :fill-pointer 0))))
+			 :initform ())))
 
 (defun make-transform ()
   (make-instance 'transform))
+
+(defun transform-rotation (transform)
+  ())
+
+(defun (setf transform-rotation) (transform rot)
+  ())
+
+(defun transform-position (transform)
+  ())
+
+(defun (setf transform-position) (transform pos)
+  ())
+
+(defun transform-rotate (transform rot)
+  ())
+
+(defun transform-move (transform mov)
+  ())
+
+(defun transform-lookat (transform target up)
+  ())
 
 (defun transform->matrix (tm)
   "todo:"

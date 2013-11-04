@@ -11,11 +11,19 @@
   (cl:format t "this is main deinit~%"))
 
 (defun main-loop ()
-  (cl:format t "this is main loop ~%"))
+  ;(cl:format t "this is main loop ~%")
+  (with-accessors ((scn game-scene)) *game-instance*
+	(add-light scn (make-light 'spot-light)))
+  (with-accessors ((scn game-scene)) *game-instance*
+	(add-entity scn (make-entity)))
+  (with-accessors ((scn game-scene)) *game-instance*
+	(cl:format t "light count ~A~%" (light-count scn)))
+  (with-accessors ((scn game-scene)) *game-instance*
+	(cl:format t "entity count ~A~%" (entity-count scn))))
 
 (defun main ()
   "the entry function"
   (main-init)
-  (virgo-game:with-game-loop *game-instance* +game-fps+
+  (with-game-loop *game-instance* +game-fps+
   	(main-loop))
   (main-deinit))

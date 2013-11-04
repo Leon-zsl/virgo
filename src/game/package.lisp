@@ -1,11 +1,13 @@
-(defpackage #:virgo-game
+(in-package :cl-user)
+
+(defpackage :virgo-game
   (:use :cl
-		:virgo-math
-		:virgo-render
 		:virgo-scene
 		:virgo-res
 		:virgo-net)
-  (:export :make-game
+  (:export :game
+		   :make-game
+		   :game-scene
 		   :game-startup
 		   :game-shutdown
 		   :game-update
